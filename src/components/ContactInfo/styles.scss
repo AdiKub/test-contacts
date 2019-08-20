@@ -1,2 +1,45 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 53%;
+  padding: 10px;
+  justify-content: space-evenly;
+  color: $mainLight;
+
+  &__username {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  &-detail {
+    display: flex;
+    flex-direction: column;
+ 
+
+    &-box{
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        font-size: 0.8em;
+      }
+      &__text {
+        font-size: 0.8em;
+
+        &__name {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+ }

@@ -12,11 +12,15 @@ const ContactCard = (props) => {
     <div className='contact-card'>
       <div className='contact-card-intermedia'>
         <div className='contact-card-intermedia-image'>
-
+          <img 
+            src={contacts[0].avatar} 
+            alt='avatar' 
+            className='contact-card-intermedia-image__avatar' />
         </div>
         <div className='contact-card-intermedia-buttons'>
           <button className='contact-card-intermedia-button'>
             <FontAwesomeIcon
+              style={{color: contacts[0].favorite && '#CC4852'}}
               className="contact-card-intermedia__icon"
               icon={faHeart}
             />
