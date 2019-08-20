@@ -4,19 +4,34 @@ import React from 'react';
 
 import './styles.scss';
 
-const ContactsForm = () => {
+const ContactsForm = (props) => {
+  const { contacts } = props 
 
+  const onlyUnique = (value, index, self) => { 
+    return self.indexOf(value) === index;
+  }
+  const latterArray = []
+  
+ 
+
+  contacts.map(cont => 
+    latterArray.push(cont.name.charAt(0))
+  )
+
+  
   return (
     <form className='contacts-forms'>
       <button name='sort-alphabet' className='contacts-form-sort sort-alphabet'>
-        a-z
+        A-Z
       </button>
       <select name='sort-letter' className='contacts-form-sort sort-letter'>
-         <option value="ALL">all</option>
-         <option value="a">a</option>
-         <option value="b">b</option>
-         <option value="c">c</option>
-         <option value="d">d</option>
+         <option value="ALL"> ALL </option>
+          {latterArray.filter(onlyUnique).map(latter=>
+            <option 
+              key={latter} 
+              value={latter}> {latter}
+            </option>
+            )}
       </select>
       <input 
         name='contacts-form-search' 

@@ -2,9 +2,9 @@ import React from 'react';
 //import { useSelector, useDispatch } from 'react-redux';
 
 import './styles.scss';
-import contacts from '../../assets/contacts.json'
 
-const ContactsList = () => {
+const ContactsList = (props) => {
+  const { contacts } = props 
  
   return (
     <div className='contacts-list'>
