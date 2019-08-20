@@ -1,2 +1,42 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
+
+.contact-card {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  width: 100%;
+  height: 170px;
+
+  &-intermedia {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 45%;
+
+    &-image {
+      height: 130px;
+      width: 130px;
+      background-color: $mainLight;
+      border-radius: 50%;
+    }
+    &-buttons{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-evenly;
+    }
+    &-button {
+      height: 45px;
+      width: 45px;
+      background-color: $gray;
+      border-radius: 50%;
+    }
+    &__icon {
+      height: 100%;
+      width: 100%;
+      font-size: 1.8em;
+      color: $mainLight;
+    }
+  }
+}
