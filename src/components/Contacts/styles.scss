@@ -1,0 +1,11 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+
+.constacts-container {
+  width: 210px;
+  height: auto;
+  margin-right: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $mainDark;
+}

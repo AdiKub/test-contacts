@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.contacts-list{
+  height: 700px;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+
+  overflow:hidden; 
+  overflow-y:scroll;
+
+  &-contact {
+    padding: 5px 10px;
+    margin-bottom: 3px;
+    font-weight: bold;
+    &:hover {
+      cursor: pointer;
+      background-color: $mainDark;
+      color: $mainLight;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.contacts {
+
+  &-forms {
+    display: flex;
+    height: 35px;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &-form {
+ 
+    &-sort {
+      color: $mainLight;
+      font-weight: bold;
+      background-color: $mainDark;
+      height: 100%;
+      width: 40px;
+    }
+
+    &-search {
+      color: $mainLight;
+      font-weight: bold;
+      background-color: $mainDark;
+      padding: 10px;
+      width: 120px;
+      height: 100%;
+      &::placeholder {
+        opacity: 0.7;
+        color: $mainLight;
+      } 
+    }
+  }
+}
