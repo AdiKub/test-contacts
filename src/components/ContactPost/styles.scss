@@ -1,2 +1,32 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
+
+.contact-post {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  border-top: 1px solid $mainLight;
+  padding-top: 10px;
+
+  &__text {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+    color: $mainLight;
+  }
+
+  &-tags {
+    display: flex;
+
+    &__tag {
+      color: $mainLight;
+      padding: 4px;
+      background-color: $gray;
+      margin-right: 10px;
+      font-size: 0.8em;
+      &:hover {
+        cursor: pointer;
+      }      
+    }
+  }
+  
+}
