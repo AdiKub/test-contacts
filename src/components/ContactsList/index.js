@@ -1,22 +1,32 @@
-import React from 'react';
-//import { useSelector, useDispatch } from 'react-redux';
-
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './styles.scss';
 
-const ContactsList = (props) => {
-  const { contacts } = props 
- 
+
+const ContactsList = () => {
+  const [selected, isSelected] = useState('')
+  const contacts = JSON.parse(localStorage.getItem('contacts'))
+  const dispatch = useDispatch()
+
   return (
     <div className='contacts-list'>
-      { contacts.map(cont =>
-        <div key={cont.id} className='contacts-list-contact'>
+      {contacts.map(contact =>
+        <div 
+          onClick={(e)=>
+            {dispatch({ type:'SET_SELECTED_CONTACT', title: contact }) 
+            isSelected(contact.id)}
+          }
+          key={contact.id} 
+          className={ selected === contact.id ? 
+            'contacts-list-contact contacts-list-contact_selected' : 
+            'contacts-list-contact' }>
           <span className='contacts-list-contact__name'>
-              {cont.name}  
+            {contact.name}  
           </span>
         </div>
       )}
     </div>
-  );
+  )
 }
 
 export default ContactsList;

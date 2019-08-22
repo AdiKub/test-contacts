@@ -1,21 +1,26 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-//import { useSelector, useDispatch } from 'react-redux';
 import ContactCard from '../ContactCard'
-import DetailForm from '../DetailForm'
 import ContactPost from '../ContactPost'
-import contacts from '../../assets/contacts.json'
+
 import './styles.scss';
 
 const DetailContact = () => {
-
+  const contact = useSelector(store=>store.contact)
+  if (contact) { 
   return (
     <div className='detail-contact-container'>
-      <ContactCard contacts={contacts} />
-      <DetailForm />
-      <ContactPost contacts={contacts}/>
+      <ContactCard contact={contact} />
+      <ContactPost contact={contact} />
     </div>
-  );
+  )} else {
+    return (
+      <div>
+        Select the contact
+      </div>    
+    )
+  };
 }
 
 export default DetailContact;

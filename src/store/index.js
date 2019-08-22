@@ -1,18 +1,19 @@
 import { createStore } from 'redux';
 
 const INITIAL_STATE = {
-  myList: [
-    'read',
-    'write'
-  ]
+  modeEdit: false,
+  params: '',
+  contact: false
 }
 
 const todoshka = (state=INITIAL_STATE, action) => {
   switch (action.type) {
-    case 'ADD_TASK': 
-      return { ...state, myList: [ ...state.myList, action.title ] };
-    case 'DELET_TASK':
-        return { ...state, myList: action.title }
+    case 'ENABLE_EDIT_MODE':
+      return { ...state, modeEdit: action.title };
+    case 'SET_REQUEST_PARAM':
+      return { ...state, params: action.title }
+    case 'SET_SELECTED_CONTACT':
+      return { ...state, contact: action.title }
     default: 
       return state; 
   }

@@ -1,44 +1,34 @@
-import React from 'react';
-
-//import { useSelector, useDispatch } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import {  useDispatch } from 'react-redux';
 
 import './styles.scss';
 
-const ContactsForm = (props) => {
-  const { contacts } = props 
-
-  const onlyUnique = (value, index, self) => { 
-    return self.indexOf(value) === index;
-  }
-  const latterArray = []
+const ContactsForm = () => {
+  const dispatch = useDispatch()
+  const [param, setGetParam] = useState('')
   
- 
-
-  contacts.map(cont => 
-    latterArray.push(cont.name.charAt(0))
-  )
-
+  useEffect(()=> {
+    dispatch( { type: 'SET_REQUEST_PARAM', title: param })
+  })
   
   return (
-    <form className='contacts-forms'>
-      <button name='sort-alphabet' className='contacts-form-sort sort-alphabet'>
-        A-Z
+    <div className='contacts-forms'>
+      <button onClick={()=> 
+        param ?  
+        setGetParam('') : 
+        setGetParam('?_sort=name')} 
+        name='sort-alphabet' 
+        className='contacts-form-sort sort-alphabet'>
+        {param ?  
+        'ALL' : 
+        'A-Z'} 
       </button>
-      <select name='sort-letter' className='contacts-form-sort sort-letter'>
-         <option value="ALL"> ALL </option>
-          {latterArray.filter(onlyUnique).map(latter=>
-            <option 
-              key={latter} 
-              value={latter}> {latter}
-            </option>
-            )}
-      </select>
       <input 
         name='contacts-form-search' 
         placeholder='SEARCH' 
         className='contacts-form-search'>
       </input>
-    </form>
+    </div>
   );
 }
 

@@ -12,9 +12,13 @@
 
   &-contact {
     padding: 5px 10px;
-
     margin-bottom: 3px;
     font-weight: bold;
+
+    &_selected {
+      background-color: $mainDark;
+      color: $mainLight;
+    }
     &:hover {
       cursor: pointer;
       background-color: $mainDark;

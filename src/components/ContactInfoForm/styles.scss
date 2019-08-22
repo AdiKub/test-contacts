@@ -5,7 +5,7 @@
 .contact-info-forms {
   display: flex;
   flex-direction: column;
-  
+  justify-content: space-evenly;
 
   &-form {
     margin-bottom: 5px;

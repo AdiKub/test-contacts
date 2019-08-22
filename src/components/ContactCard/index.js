@@ -1,39 +1,51 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { faHeart, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+
+import ContactInfoForm from '../ContactInfoForm'
 import ContactInfo from '../ContactInfo'
 
 import './styles.scss';
 
 const ContactCard = (props) => {
-  const { contacts } = props
+  const { contact } = props
+  const mode = useSelector(state => state.modeEdit)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+	
+	})
+
   return (
     <div className='contact-card'>
       <div className='contact-card-intermedia'>
         <div className='contact-card-intermedia-image'>
           <img 
-            src={contacts[0].avatar} 
+            src={contact.avatar} 
             alt='avatar' 
             className='contact-card-intermedia-image__avatar' />
         </div>
         <div className='contact-card-intermedia-buttons'>
           <button className='contact-card-intermedia-button'>
             <FontAwesomeIcon
-              style={{color: contacts[0].favorite && '#CC4852'}}
+              style={{color: contact.favorite && '#fc0741'}}
               className="contact-card-intermedia__icon"
               icon={faHeart}
             />
           </button>
-          <button className='contact-card-intermedia-button'>
+          {!mode && <button
+            onClick={()=>	dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })} 
+            className='contact-card-intermedia-button'>
             <FontAwesomeIcon
               className="contact-card-intermedia__icon"
               icon={faEdit} 
             />
-          </button>
+          </button> }
         </div>
       </div>
-      <ContactInfo contacts={contacts}/>
+      {!mode ? <ContactInfo contact={contact}/> : 
+              <ContactInfoForm />}
     </div>
   );
 }

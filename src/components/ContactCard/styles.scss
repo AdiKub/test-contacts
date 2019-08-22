@@ -39,14 +39,14 @@
     &-button {
       height: 40px;
       width: 40px;
-      background-color: $gray;
+      background-color: $mainLight;
       border-radius: 50%;
     }
     &__icon {
       height: 100%;
       width: 100%;
-      font-size: 1.8em;
-      color: $mainLight;
+      font-size: 1.5em;
+      color: $mainDark;
     }
   }
 }

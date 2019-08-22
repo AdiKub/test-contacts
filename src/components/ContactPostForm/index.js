@@ -11,6 +11,7 @@ const ContactPostForm = () => {
     <div className='contact-post-forms'>
       {postArray.map(post=>
         <div 
+          key={post}
           className='contact-post-forms-form'>
           {post}
           <textarea 
@@ -22,7 +23,7 @@ const ContactPostForm = () => {
         words
         <div className='contact-post-forms-form-word'>
           <input className='contact-post-forms-form-word__input'  /> 
-          <button className='contact-post-forms-form-word__button'> ADD </button>
+          <button className='contact-post-forms-form-word__button'> SAVE </button>
         </div>
       </div>
     </div>
