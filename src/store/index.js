@@ -3,7 +3,8 @@ import { createStore } from 'redux';
 const INITIAL_STATE = {
   modeEdit: false,
   params: '',
-  contact: false
+  contact: false,
+  isReady: false
 }
 
 const todoshka = (state=INITIAL_STATE, action) => {
@@ -14,6 +15,9 @@ const todoshka = (state=INITIAL_STATE, action) => {
       return { ...state, params: action.title }
     case 'SET_SELECTED_CONTACT':
       return { ...state, contact: action.title }
+    case 'LET_RELOAD':
+      console.log(action.title)
+      return { ...state, isReady: action.title }
     default: 
       return state; 
   }

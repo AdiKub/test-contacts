@@ -19,9 +19,7 @@ const ContactsForm = () => {
         setGetParam('?_sort=name')} 
         name='sort-alphabet' 
         className='contacts-form-sort sort-alphabet'>
-        {param ?  
-        'ALL' : 
-        'A-Z'} 
+        {param ? 'ALL' : 'A-Z'} 
       </button>
       <input 
         name='contacts-form-search' 
