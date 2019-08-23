@@ -4,7 +4,7 @@ const INITIAL_STATE = {
   modeEdit: false,
   params: '',
   contact: false,
-  isReady: false
+  changes: {}
 }
 
 const todoshka = (state=INITIAL_STATE, action) => {
@@ -15,9 +15,9 @@ const todoshka = (state=INITIAL_STATE, action) => {
       return { ...state, params: action.title }
     case 'SET_SELECTED_CONTACT':
       return { ...state, contact: action.title }
-    case 'LET_RELOAD':
+    case 'SET_INFO_FOR_CONTACT':
       console.log(action.title)
-      return { ...state, isReady: action.title }
+      return { ...state, changes: action.title }
     default: 
       return state; 
   }

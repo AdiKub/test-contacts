@@ -1,29 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { useSelector } from 'react-redux';
-import ContactPostForm from '../ContactPostForm'
+import { useSelector, useDispatch } from 'react-redux';
 import './styles.scss';
 
 const ContactPost = (props) => {
-  const { contact } = props
+  const [deletedPost, setDeletedPost] = useState({})
+  const contact = useSelector(store=>store.contact)
   const mode = useSelector(state => state.modeEdit)
+  const dispatch = useDispatch();
+  
+  const handleDelete = (index) => {
+    setDeletedPost(contact.posts.splice(index, 1))
+    dispatch({ type:'SET_SELECTED_CONTACT', title: contact })
+    console.log(deletedPost)
+  } 
 
   return (
     <>
-      { mode && <ContactPostForm /> }
       {contact.posts.map((post, index)=>
         <div key={post.sentence+index} className='contact-post'>
           <p className='contact-post__text'>{post.sentence}</p>
           <p className='contact-post__text'>{post.sentences}</p>
           <p className='contact-post__text'>{post.paragraph}</p>
           <div className='contact-post-tags'>
-            {post.words.map((tag, index)=>
-              tag && <div key={tag+index} className='contact-post-tags__tag'>
-                       {tag}
-                    </div>  
+            {post.words.map((tag, index)=> tag && 
+              <div key={tag+index} className='contact-post-tags__tag'>
+                {tag}
+              </div>  
             )}
           </div>
-          { mode && <button className='contact-post_delete__button'>DELETE</button>}
+          { mode && 
+            <button 
+              onClick={()=>handleDelete(index)}
+              id={index} 
+              className='contact-post_delete__button'>
+              DELETE
+            </button> }
         </div>
       )}
     </>

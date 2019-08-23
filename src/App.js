@@ -3,16 +3,12 @@ import { Provider } from 'react-redux';
 
 import store from './store';
 import './assets/styles/main.scss'
-import Contacts from './components/Contacts'
-import DetailContact from './components/DetailContact'
+import HomePage from './pages/HomePage'
 
 const App = () => {
   return ( 
     <Provider store={store}>
-      <div className='container'>
-        <Contacts />
-        <DetailContact />
-      </div>
+      <HomePage />
     </Provider>
   );
 }

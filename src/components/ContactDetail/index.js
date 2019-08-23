@@ -16,9 +16,9 @@ const DetailContact = () => {
     </div>
   )} else {
     return (
-      <div>
-        Select the contact
-      </div>    
+      <h2>
+         Select the contact
+      </h2>    
     )
   };
 }

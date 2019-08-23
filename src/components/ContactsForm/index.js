@@ -14,9 +14,7 @@ const ContactsForm = () => {
   return (
     <div className='contacts-forms'>
       <button onClick={()=> 
-        param ?  
-        setGetParam('') : 
-        setGetParam('?_sort=name')} 
+        param ? setGetParam('') : setGetParam('?_sort=name')} 
         name='sort-alphabet' 
         className='contacts-form-sort sort-alphabet'>
         {param ? 'ALL' : 'A-Z'} 
