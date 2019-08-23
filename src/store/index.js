@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 const INITIAL_STATE = {
   modeEdit: false,
   params: '',
-  contact: false,
+  contact: null,
   changes: {}
 }
 
@@ -16,7 +16,8 @@ const todoshka = (state=INITIAL_STATE, action) => {
     case 'SET_SELECTED_CONTACT':
       return { ...state, contact: action.title }
     case 'SET_INFO_FOR_CONTACT':
-      console.log(action.title)
+      return { ...state, changes: action.title }
+    case 'DELETE_POST_CONTACT':
       return { ...state, changes: action.title }
     default: 
       return state; 

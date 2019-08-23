@@ -23,7 +23,7 @@ const ContactPost = (props) => {
           <p className='contact-post__text'>{post.sentences}</p>
           <p className='contact-post__text'>{post.paragraph}</p>
           <div className='contact-post-tags'>
-            {post.words.map((tag, index)=> tag && 
+            {post.words && post.words.map((tag, index)=> tag && 
               <div key={tag+index} className='contact-post-tags__tag'>
                 {tag}
               </div>  

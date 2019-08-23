@@ -10,7 +10,7 @@ const ContactsList = () => {
 
   return (
     <div className='contacts-list'>
-      {contacts.map(contact =>
+      {contacts.sort((a, b)=>a.id-b.id).map(contact =>
         <div 
           onClick={(e)=> {
             dispatch({ type:'SET_SELECTED_CONTACT', title: contact }) 

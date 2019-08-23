@@ -17,11 +17,14 @@ const ContactPostForm = (props) => {
   }
 
   const saveChanges = () => {
-    contact['posts'].push(newPost)
-    console.log(contact)
+    Object.keys(newPost).length > 0 && contact.posts.push(newPost)
+    const contacts = JSON.parse(localStorage.getItem('contacts'))
+    const newContacts = contacts.filter(cont => cont.id !== contact.id)
+    newContacts.unshift(contact)
+    localStorage.setItem('contacts', JSON.stringify(newContacts))
     dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })
-    dispatch({ type:'SET_SELECTED_CONTACT', title: contact })
   }
+
   return (
     <div className='contact-post-forms'>
       {postArray.map(post=>
