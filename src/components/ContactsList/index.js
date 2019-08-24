@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import './styles.scss';
 
+import './styles.scss';
 
 const ContactsList = () => {
   const [selected, isSelected] = useState('')
   const searchLatters = useSelector(store=>store.searchLatters)
   const sort = useSelector(store=>store.sort)
-  const regex = new RegExp(searchLatters, 'gi') 
+  const regex = new RegExp(searchLatters, 'gi')
+
   const contacts = JSON.parse(localStorage.getItem('contacts'))
   .filter(cont=> cont.name.search(regex)>=0 )
   .sort((a, b) => { 
@@ -22,10 +23,8 @@ const ContactsList = () => {
     }
   })
   
-  
-
   const dispatch = useDispatch()
-  
+
   return (
     <div className='contacts-list'>
       {contacts.map(contact =>

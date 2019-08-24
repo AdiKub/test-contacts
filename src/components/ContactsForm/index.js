@@ -13,9 +13,8 @@ const ContactsForm = () => {
 
   return (
     <div className='contacts-forms'>
-      <button onClick={()=> {
-        isSort (!sort)
-      }}
+      <button 
+        onClick={()=>isSort(!sort)}
         className='contacts-form-sort sort-alphabet'>
         {sort ? 'ALL' : 'A-Z'} 
       </button>

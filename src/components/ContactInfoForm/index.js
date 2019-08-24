@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { useSelector } from 'react-redux';
 
 import './styles.scss';
@@ -7,6 +6,7 @@ import './styles.scss';
 const ContactInfoForm = (props) => {
   const contact = useSelector(store=>store.contact)
   const inputNames = ['username', 'name', 'email', 'phone', 'website']
+  
   const onChangeInfoInput = (event) => {
     contact[event.target.name] = event.target.value
   }

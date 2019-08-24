@@ -1,23 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { faHeart, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector, useDispatch } from 'react-redux';
 
-const ContactInteractive = (props) => {
+const ContactInteractive = () => {
   const contact = useSelector(store=>store.contact)
-  const [fav, setFav] = useState(contact.favorite)
   const mode = useSelector(state => state.modeEdit)
   const dispatch = useDispatch();
-
-  const setFavorite = () => {
-    setFav(!contact.favorite)
-    contact.favorite = !contact.favorite
-    const contacts = JSON.parse(localStorage.getItem('contacts'))
-    const newContacts = contacts.filter(cont => cont.id !== contact.id)
-    newContacts.unshift(contact)
-    localStorage.setItem('contacts', JSON.stringify(newContacts))
-    console.log(fav)
-  }
 
   return (
     <div className='contact-card-intermedia'>
@@ -29,7 +18,6 @@ const ContactInteractive = (props) => {
       </div>
       <div className='contact-card-intermedia-buttons'>
         <button
-          onClick={setFavorite} 
           className='contact-card-intermedia-button'>
           <FontAwesomeIcon
             style={{ color: contact.favorite && '#fc0741' }}

@@ -7,6 +7,7 @@ import './styles.scss';
 
 const ContactInfo = () => {
   const contact = useSelector(store=>store.contact)
+  
   return (
     <div className='contact-info'>
       <h4 className='contact-info__username'>

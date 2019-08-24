@@ -1,5 +1,4 @@
 import React from 'react'
-//import { useSelector } from 'react-redux';
 
 import ContactInteractive from '../ContactInteractive'
 import ContactInfoForm from '../ContactInfoForm'

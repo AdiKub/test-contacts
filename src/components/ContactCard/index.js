@@ -5,7 +5,7 @@ import ContactInfo from '../ContactInfo'
 
 import './styles.scss';
 
-const ContactCard = (props) => {
+const ContactCard = () => {
   return (
     <div className='contact-card'>
       <ContactInteractive  />
