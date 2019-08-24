@@ -44,6 +44,13 @@ button, input {
     @media (min-width: 1440px) { 
         max-width: 1440px;
     }
+
+    @media screen and (max-width: 768px) { 
+        padding: 20px 20px;
+    } 
+    @media screen and (max-width: 992px) { 
+        padding: 20px 20px;
+    }
 }
 
 

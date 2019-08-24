@@ -6,4 +6,17 @@
   height: auto;
   padding: 20px;
   background-color: $mainDark;
+
+  @media screen and (max-width: 992px) { 
+    min-width: 410px;
+  }
+  @media screen and (max-width: 767px) {
+    min-width: 300px;
+    padding: 10px;
+  }
+  @media screen and (max-width: 576px) {
+    width: 150px;
+    align-items: center;
+  }
+
 }

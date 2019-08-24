@@ -15,7 +15,7 @@ const ContactInfoForm = (props) => {
     <div className='contact-info-forms'>
       {inputNames.map(form=>
         <div key={form} className='contact-info-forms-form'>
-         {form} 
+         <span>{form}</span>
         <input
           onChange={(event)=>onChangeInfoInput(event)}
           defaultValue={contact[form]}

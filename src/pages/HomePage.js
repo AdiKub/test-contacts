@@ -6,6 +6,8 @@ import ContactEditForm from '../components/ContactEditForm'
 import Contacts from '../components/Contacts'
 import { requestMaker }  from '../api/index.js'
 
+
+
 const HomePage = () => {
   const contacts = localStorage.getItem('contacts')
   const mode = useSelector(state => state.modeEdit)

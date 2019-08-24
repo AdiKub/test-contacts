@@ -2,10 +2,20 @@
 @import '../../assets/styles/variables';
 
 
-.constacts-container {
+.contacts-container {
   width: 230px;
   height: auto;
   margin-right: 20px;
   padding-bottom: 10px;
   border-bottom: 1px solid $mainDark;
+
+  @media screen and (max-width: 992px) { 
+    margin-right: 5px;
+  }
+  @media screen and (max-width: 768px) { 
+    margin-right: 5px;
+  }
+  @media screen and (max-width: 576px) {
+    width: 170px;
+  }
 }

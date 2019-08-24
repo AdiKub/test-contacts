@@ -1,0 +1,68 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.contact-card {
+
+  &-intermedia {
+    margin-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px; 
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 15px;
+      margin-right: 0;
+      flex-direction: column;
+      height: auto;
+      width: auto;
+    }
+    @media screen and (max-width: 576px) {
+      
+    }
+
+    &-image {
+      height: 130px;
+      width: 130px;
+      background-color: $mainLight;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: 767px) {
+        margin-bottom: 15px;
+      }
+
+      &__avatar {
+        height: 90%;
+        width: 90%;
+        object-fit: contain;
+        border-radius: 50%;
+      }
+    }
+    &-buttons{
+      display: flex;
+      flex-direction: column;
+      height: 130px;
+      justify-content: space-evenly;
+
+      @media screen and (max-width: 767px) {
+        flex-direction: row;
+        height: auto;
+        width: 150px;
+      }
+    }
+    &-button {
+      height: 40px;
+      width: 40px;
+      background-color: $mainLight;
+      border-radius: 50%;
+    }
+    &__icon {
+      height: 100%;
+      width: 100%;
+      font-size: 1.5em;
+      color: $mainDark;
+    }
+  }
+}

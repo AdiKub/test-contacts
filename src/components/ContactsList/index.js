@@ -5,9 +5,11 @@ import './styles.scss';
 
 const ContactsList = () => {
   const [selected, isSelected] = useState('')
+  const dispatch = useDispatch()
   const searchLatters = useSelector(store=>store.searchLatters)
+  const modeEdit = useSelector(store=>store.modeEdit)
   const sort = useSelector(store=>store.sort)
-  const regex = new RegExp(searchLatters, 'gi')
+  const regex = new RegExp('^'+searchLatters, 'gi')
 
   const contacts = JSON.parse(localStorage.getItem('contacts'))
   .filter(cont=> cont.name.search(regex)>=0 )
@@ -22,17 +24,16 @@ const ContactsList = () => {
       )
     }
   })
-  
-  const dispatch = useDispatch()
 
   return (
     <div className='contacts-list'>
       {contacts.map(contact =>
-        <div 
-          onClick={(e)=> {
-            dispatch({ type:'SET_SELECTED_CONTACT', title: contact }) 
-            isSelected(contact.id) 
-          }}
+        <div onClick={(e)=> !modeEdit && 
+            (
+              dispatch({ type:'SET_SELECTED_CONTACT', title: contact }),
+              isSelected(contact.id)
+            )
+          }
           key={contact.id} 
           className={ selected === contact.id ? 
             'contacts-list-contact contacts-list-contact_selected' : 
@@ -40,6 +41,9 @@ const ContactsList = () => {
           <span className='contacts-list-contact__name'>
             {contact.name}  
           </span>
+          <button className='contacts-list-exit_button'>
+
+          </button>
         </div>
       )}
     </div>

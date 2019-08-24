@@ -3,6 +3,8 @@ import { faHeart, faEdit } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector, useDispatch } from 'react-redux';
 
+import './styles.scss';
+
 const ContactInteractive = () => {
   const contact = useSelector(store=>store.contact)
   const mode = useSelector(state => state.modeEdit)

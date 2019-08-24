@@ -7,7 +7,7 @@ import './styles.scss';
 
 const Contacts = () => {
   return (
-    <div className='constacts-container'>
+    <div className='contacts-container'>
       <ContactsForm />
       <ContactsList />
     </div>

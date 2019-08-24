@@ -6,14 +6,23 @@
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-
   overflow:hidden; 
   overflow-y:scroll;
 
   &-contact {
-    padding: 5px 10px;
-    margin-bottom: 3px;
+    padding: 3px 10px;
     font-weight: bold;
+
+    @media screen and (max-width: 576px) {
+      
+    }
+
+    &__name {
+      font-size: 1em;
+      @media screen and (max-width: 576px) {
+        font-size:0.9em;
+      }
+    }
 
     &_selected {
       background-color: $mainDark;
@@ -21,7 +30,7 @@
     }
     &:hover {
       cursor: pointer;
-      background-color: $mainDark;
+      background-color: $gray;
       color: $mainLight;
     }
   }

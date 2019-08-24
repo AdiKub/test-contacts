@@ -7,6 +7,11 @@
   flex-direction: column;
   justify-content: space-evenly;
 
+  @media screen and (max-width: 992px) { 
+    width: auto;
+    align-items: center;
+  }
+
   &-form {
     margin-bottom: 5px;
     color: $mainLight;
@@ -14,10 +19,21 @@
     display: flex;
     justify-content: flex-end;
 
+    @media screen and (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    }
+
     &__input {
       padding: 5px;
       height: 20px;
       margin-left: 10px;
+
+      @media screen and (max-width: 576px) {
+       margin-top: 5px;
+       height: 25px;
+       margin-left: 0px;
+      }
     }
   }
 
