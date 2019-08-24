@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './styles.scss';
 
@@ -9,9 +9,6 @@ const ContactInfoForm = (props) => {
   const inputNames = ['username', 'name', 'email', 'phone', 'website']
   const onChangeInfoInput = (event) => {
     contact[event.target.name] = event.target.value
-
-    console.log(contact)
-    //dispatch({ type: 'SET_INFO_FOR_CONTACT', title: changes })
   }
   
   return (

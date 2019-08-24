@@ -6,11 +6,10 @@ import ContactInfo from '../ContactInfo'
 import './styles.scss';
 
 const ContactCard = (props) => {
-  const { contact } = props
   return (
     <div className='contact-card'>
-      <ContactInteractive contact={contact} />
-      <ContactInfo contact={contact}/>       
+      <ContactInteractive  />
+      <ContactInfo />       
     </div>
   );
 }

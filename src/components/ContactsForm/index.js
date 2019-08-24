@@ -1,26 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {  useDispatch } from 'react-redux';
 
 import './styles.scss';
 
 const ContactsForm = () => {
   const dispatch = useDispatch()
-  const [param, setGetParam] = useState('')
+  const [sort, isSort] = useState(false)
   
-  useEffect(()=> {
-    dispatch( { type: 'SET_REQUEST_PARAM', title: param })
+  useEffect(()=>{
+    dispatch({type: 'SET_SORT_PARAM', title: sort})
   })
-  
+
   return (
     <div className='contacts-forms'>
-      <button onClick={()=> 
-        param ? setGetParam('') : setGetParam('?_sort=name')} 
-        name='sort-alphabet' 
+      <button onClick={()=> {
+        isSort (!sort)
+      }}
         className='contacts-form-sort sort-alphabet'>
-        {param ? 'ALL' : 'A-Z'} 
+        {sort ? 'ALL' : 'A-Z'} 
       </button>
-      <input 
-        name='contacts-form-search' 
+      <input
+        onChange={(event)=>{
+          dispatch({type: 'SET_REACH_LATTERS', title: event.target.value})
+        }}  
         placeholder='SEARCH' 
         className='contacts-form-search'>
       </input>

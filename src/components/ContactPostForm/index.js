@@ -5,10 +5,10 @@ import './styles.scss';
 
 const ContactPostForm = (props) => {
   const contact = useSelector(store=>store.contact)
+  const newPost = {}
   const mode = useSelector(state => state.modeEdit)
   const dispatch = useDispatch();
   const postArray = ['sentence', 'sentences', 'paragraph']
-  const newPost = {}
 
   const onChangeInfoInput = (event) => {
     event.target.name === 'words' ?
@@ -46,7 +46,7 @@ const ContactPostForm = (props) => {
             name='words' 
             onChange={(event)=>onChangeInfoInput(event)}
             className='contact-post-forms-form-word__input' /> 
-          <button 
+          <button
             onClick={saveChanges} 
             className='contact-post-forms-form-word__button'> 
             SAVE 

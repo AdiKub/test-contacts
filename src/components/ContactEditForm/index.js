@@ -1,10 +1,10 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 
 import ContactInteractive from '../ContactInteractive'
 import ContactInfoForm from '../ContactInfoForm'
 import ContactPostForm from '../ContactPostForm'
-import ContactPost from '../ContactPost'
+import ContactPosts from '../ContactPosts'
 
 const ContactEditForm = () => {
   return (
@@ -14,7 +14,7 @@ const ContactEditForm = () => {
         <ContactInfoForm /> 
       </div>
       <ContactPostForm  />
-      <ContactPost  />
+      <ContactPosts  />
     </div>
   )
 }

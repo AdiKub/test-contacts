@@ -1,12 +1,12 @@
 import React from 'react';
 import { faMobileAlt, faGlobeAmericas, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-//import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './styles.scss';
 
-const ContactInfo = (props) => {
-  const { contact } = props
+const ContactInfo = () => {
+  const contact = useSelector(store=>store.contact)
   return (
     <div className='contact-info'>
       <h4 className='contact-info__username'>

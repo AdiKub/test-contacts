@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import './styles.scss';
 
-const ContactPost = (props) => {
-  const [deletedPost, setDeletedPost] = useState({})
+const ContactPosts = () => {
   const contact = useSelector(store=>store.contact)
   const mode = useSelector(state => state.modeEdit)
+  const [contactPost, setContactPost] = useState([{words: []}])
   const dispatch = useDispatch();
   
   const handleDelete = (index) => {
-    setDeletedPost(contact.posts.splice(index, 1))
+    setContactPost(contactPost.filter(img => img.name !== contactPost[index].name))
+    //setDeletedPost(contact.posts.splice(index, 1))
     dispatch({ type:'SET_SELECTED_CONTACT', title: contact })
-    console.log(deletedPost)
   } 
+
+  useEffect(()=>{
+    contact.posts && setContactPost(contact.posts)
+  }, [contact.posts])
 
   return (
     <>
-      {contact.posts.map((post, index)=>
+      {contactPost.map((post, index)=>
         <div key={post.sentence+index} className='contact-post'>
           <p className='contact-post__text'>{post.sentence}</p>
           <p className='contact-post__text'>{post.sentences}</p>
@@ -42,4 +46,4 @@ const ContactPost = (props) => {
   )
 }
 
-export default ContactPost;
+export default ContactPosts;

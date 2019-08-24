@@ -16,6 +16,7 @@ const ContactInteractive = (props) => {
     const newContacts = contacts.filter(cont => cont.id !== contact.id)
     newContacts.unshift(contact)
     localStorage.setItem('contacts', JSON.stringify(newContacts))
+    console.log(fav)
   }
 
   return (
