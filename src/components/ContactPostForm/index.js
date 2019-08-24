@@ -5,10 +5,10 @@ import './styles.scss';
 
 const ContactPostForm = (props) => {
   const contact = useSelector(store=>store.contact)
-  const newPost = {}
   const mode = useSelector(state => state.modeEdit)
   const dispatch = useDispatch();
   const postArray = ['sentence', 'sentences', 'paragraph']
+  const newPost = {}
 
   const onChangeInfoInput = (event) => {
     event.target.name === 'words' ?
@@ -20,7 +20,7 @@ const ContactPostForm = (props) => {
     Object.keys(newPost).length > 0 && contact.posts.push(newPost)
     const contacts = JSON.parse(localStorage.getItem('contacts'))
     const newContacts = contacts.filter(cont => cont.id !== contact.id)
-    newContacts.unshift(contact)
+    newContacts.push(contact)
     localStorage.setItem('contacts', JSON.stringify(newContacts))
     dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })
   }
@@ -50,6 +50,11 @@ const ContactPostForm = (props) => {
             onClick={saveChanges} 
             className='contact-post-forms-form-word__button'> 
             SAVE 
+          </button>
+          <button
+            onClick={()=>dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })} 
+            className='contact-post-forms-form-word__button'> 
+            CLOSE
           </button>
         </div>
       </div>

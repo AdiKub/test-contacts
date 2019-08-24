@@ -9,7 +9,7 @@ const ContactPosts = () => {
   const [contactPost, setDeletedPost] = useState([{words: []}])
   const dispatch = useDispatch();
   
-  const handleDelete = (index) => {
+  const deletePost = (index) => {
     setDeletedPost(contact.posts.splice(index, 1))
     dispatch({ type:'SET_SELECTED_CONTACT', title: contact })
   } 
@@ -30,7 +30,7 @@ const ContactPosts = () => {
           </div>
           { mode && 
             <button 
-              onClick={()=>handleDelete(index)}
+              onClick={()=>deletePost(index)}
               id={index} 
               className='contact-post_delete__button'>
               DELETE
