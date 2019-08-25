@@ -1,7 +1,6 @@
 @import '../../assets/styles/mixins';
 @import '../../assets/styles/variables';
 
-
 .contacts-container {
   width: 230px;
   height: auto;
@@ -16,6 +15,6 @@
     margin-right: 5px;
   }
   @media screen and (max-width: 576px) {
-    width: 170px;
+    width: 140px;
   }
 }

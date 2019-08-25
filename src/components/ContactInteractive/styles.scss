@@ -5,6 +5,7 @@
 
   &-intermedia {
     margin-right: 10px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,9 +17,6 @@
       flex-direction: column;
       height: auto;
       width: auto;
-    }
-    @media screen and (max-width: 576px) {
-      
     }
 
     &-image {
@@ -40,6 +38,7 @@
         border-radius: 50%;
       }
     }
+
     &-buttons{
       display: flex;
       flex-direction: column;
@@ -52,12 +51,14 @@
         width: 150px;
       }
     }
+
     &-button {
       height: 40px;
       width: 40px;
       background-color: $mainLight;
       border-radius: 50%;
     }
+    
     &__icon {
       height: 100%;
       width: 100%;

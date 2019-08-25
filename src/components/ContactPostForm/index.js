@@ -51,11 +51,6 @@ const ContactPostForm = (props) => {
             className='contact-post-forms-form-word__button'> 
             SAVE 
           </button>
-          <button
-            onClick={()=>dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })} 
-            className='contact-post-forms-form-word__button'> 
-            CLOSE
-          </button>
         </div>
       </div>
     </div>

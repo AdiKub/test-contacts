@@ -14,16 +14,16 @@
     font-weight: bold;
 
     @media screen and (max-width: 576px) {
-      
+      padding: 0px 3px;
     }
 
     &__name {
-      font-size: 1em;
+      font-size: 0.8em;
       @media screen and (max-width: 576px) {
-        font-size:0.9em;
+        font-size:0.7em;
       }
     }
-
+    
     &_selected {
       background-color: $mainDark;
       color: $mainLight;
