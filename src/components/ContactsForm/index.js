@@ -20,7 +20,7 @@ const ContactsForm = () => {
       </button>
       <input
         onChange={(event)=>{
-          dispatch({type: 'SET_REACH_LATTERS', title: event.target.value})
+          dispatch({type: 'SET_SREACH_LATTERS', title: event.target.value})
         }}  
         placeholder='SEARCH' 
         className='contacts-form-search'>

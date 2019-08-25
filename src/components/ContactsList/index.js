@@ -28,7 +28,8 @@ const ContactsList = () => {
   return (
     <div className='contacts-list'>
       {contacts.map(contact =>
-        <div onClick={(e)=> !modeEdit && 
+        <div onClick={()=> modeEdit ?
+              dispatch({ type:'OPEN_THE_MODAL', title: true }) :
             (
               dispatch({ type:'SET_SELECTED_CONTACT', title: contact }),
               isSelected(contact.id)

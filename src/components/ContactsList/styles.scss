@@ -8,6 +8,8 @@
   flex-direction: column;
   overflow:hidden; 
   overflow-y:scroll;
+  border-bottom: 1px solid $mainDark;
+  border-top: 1px solid $mainDark;
 
   &-contact {
     padding: 3px 10px;

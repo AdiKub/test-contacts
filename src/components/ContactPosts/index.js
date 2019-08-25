@@ -6,7 +6,7 @@ import './styles.scss';
 const ContactPosts = () => {
   const contact = useSelector(store=>store.contact)
   const mode = useSelector(state => state.modeEdit)
-  const [contactPost, setDeletedPost] = useState([{words: []}])
+  const [, setDeletedPost] = useState([{words: []}])
   const dispatch = useDispatch();
   
   const deletePost = (index) => {
