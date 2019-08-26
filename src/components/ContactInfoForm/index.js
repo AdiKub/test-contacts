@@ -5,7 +5,7 @@ import './styles.scss';
 
 const ContactInfoForm = (props) => {
   const contact = useSelector(store=>store.contact)
-  const inputNames = ['username', 'name', 'email', 'phone', 'website']
+  const inputNames = ['username', 'name', 'email', 'phone', 'website'] // array for input forms
   
   const onChangeInfoInput = (event) => {
     contact[event.target.name] = event.target.value

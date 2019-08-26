@@ -22,7 +22,7 @@ const ContactInteractive = () => {
         <button
           className='contact-card-intermedia-button'>
           <FontAwesomeIcon
-            style={{ color: contact.favorite && '#fc0741' }}
+            style={{ color: contact.favorite && '#fc0741' }} 
             className="contact-card-intermedia__icon"
             icon={faHeart}
           />

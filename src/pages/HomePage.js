@@ -9,21 +9,22 @@ import { requestMaker }  from '../api/index.js'
 
 const HomePage = () => {
   const contacts = localStorage.getItem('contacts')
-  const mode = useSelector(state => state.modeEdit)
+  const mode = useSelector(state => state.modeEdit)  
   
-  if (!contacts) {
+  if (contacts) {    // if localStorage empty requestMaker do request to server
     return(
-      requestMaker()
+      <div className='container'>
+        <Contacts />
+        {mode ?     // this controller check editMode is enable or disable.
+          <ContactEditForm /> :
+          
+          <ContactDetail />}
+          <ModalClosePost />
+    </div>
     )
   } else {
     return (
-      <div className='container'>
-        <Contacts />
-        {mode ?
-        <ContactEditForm /> :
-        <ContactDetail />}
-        <ModalClosePost />
-      </div>
+      requestMaker()
     )
   } 
 }

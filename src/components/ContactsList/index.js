@@ -11,7 +11,7 @@ const ContactsList = () => {
   const sort = useSelector(store=>store.sort)
   const regex = new RegExp('^'+searchLatters, 'gi')
 
-  const contacts = JSON.parse(localStorage.getItem('contacts'))
+  const contacts = JSON.parse(localStorage.getItem('contacts'))  // filter() and sort() connected all time but parameters get from redux store
   .filter(cont=> cont.name.search(regex)>=0 )
   .sort((a, b) => { 
     if (sort) { 
@@ -23,13 +23,13 @@ const ContactsList = () => {
         a.id-b.id
       )
     }
-  })
+  }) 
 
   return (
     <div className='contacts-list'>
       {contacts.map(contact =>
-        <div onClick={()=> modeEdit ?
-              dispatch({ type:'OPEN_THE_MODAL', title: true }) :
+        <div onClick={()=> modeEdit ?  // if Edit mode true and will try set new contact, will be enable modal for validation to action
+              dispatch({ type:'OPEN_THE_MODAL', title: true }) : 
             (
               dispatch({ type:'SET_SELECTED_CONTACT', title: contact }),
               isSelected(contact.id)
@@ -43,7 +43,6 @@ const ContactsList = () => {
             {contact.name}  
           </span>
           <button className='contacts-list-exit_button'>
-
           </button>
         </div>
       )}

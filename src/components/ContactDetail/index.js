@@ -8,7 +8,7 @@ import './styles.scss';
 
 const DetailContact = () => {
   const contact = useSelector(store=>store.contact)
-  if (Object.keys(contact).length>0) { 
+  if (Object.keys(contact).length>0) {    // enable ContactCard and ContactPosts components if contact was set to redux
   return (
     <div className='detail-contact-container'>
       <ContactCard />

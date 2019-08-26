@@ -10,17 +10,17 @@ const ContactPostForm = (props) => {
   const postArray = ['sentence', 'sentences', 'paragraph']
   const newPost = {}
 
-  const onChangeInfoInput = (event) => {
+  const onChangeInfoInput = (event) => { 
     event.target.name === 'words' ?
-    newPost[event.target.name] = event.target.value.trim().split(" ") :
-    newPost[event.target.name] = event.target.value 
+    newPost[event.target.name] = event.target.value.trim().split(" ") : // make array of words for words in post
+    newPost[event.target.name] = event.target.value                      
   }
 
-  const saveChanges = () => {
+  const saveChanges = () => {  // save new contact with new informations and posts
     Object.keys(newPost).length > 0 && contact.posts.push(newPost)
     const contacts = JSON.parse(localStorage.getItem('contacts'))
-    const newContacts = contacts.filter(cont => cont.id !== contact.id)
-    newContacts.push(contact)
+    const newContacts = contacts.filter(cont => cont.id !== contact.id) // delete old contact
+    newContacts.push(contact)                                           // push new contact
     localStorage.setItem('contacts', JSON.stringify(newContacts))
     dispatch({ type: 'ENABLE_EDIT_MODE', title: !mode })
   }
